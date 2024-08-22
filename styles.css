@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5a623;
+    color: #fff;
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #f5a623;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #e5941d;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Add these to the existing CSS file */
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery img {
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+form textarea {
+    transition: box-shadow 0.3s;
+}
+
+form textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+form button {
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e5941d;
+}
+
+/* Memory Game Styles */
+.memory-game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number for more or fewer columns */
+    gap: 10px; /* Space between cards */
+    margin: 20px auto;
+    max-width: 600px; /* Adjust to your desired width */
+}
+
+.memory-card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transform: rotateY(0);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.back-face {
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.congrats-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 128, 0, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Flashing screen effect */
+.urgent-alert {
+    animation: flash-bg 0.5s alternate 4;
+}
+
+@keyframes flash-bg {
+    0% { background-color: white; }
+    50% { background-color: red; }
+    100% { background-color: white; }
+}
+
+/* Optional: You can also add shaking effect */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.urgent-alert {
+    animation: shake 0.5s;
+}
+

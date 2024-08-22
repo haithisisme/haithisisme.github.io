@@ -1,1 +1,127 @@
-<h1>Hello, i am Zhan Yan</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Bieber Fanpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Justin Bieber's Fanpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#daily-schedule">Daily Schedule</a></li>
+                <li><a href="#shrine">Justin's Shrine</a></li>
+                <li><a href="#recommendation">Recommendation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="justin5.jpg" alt="Justin Bieber">
+        <h2>Belieber for Life</h2>
+    </section>
+
+    <!-- Justin's Daily Schedule -->
+    <section id="daily-schedule">
+        <h2>Justin's Daily Schedule</h2>
+        <ul>
+            <li>8:00 AM - Morning Workout</li>
+            <li>10:00 AM - Studio Time</li>
+            <li>1:00 PM - Lunch with Friends</li>
+            <li>3:00 PM - Photoshoot</li>
+            <li>7:00 PM - Concert Rehearsal</li>
+            <li>10:00 PM - Relaxing Time</li>
+        </ul>
+    </section>
+
+    <!-- Justin's Shrine -->
+    <section id="shrine">
+        <h2>Justin's Shrine</h2>
+        <div class="gallery">
+            <img src="justin1.jpg" alt="Justin Image 1">
+            <img src="justin2.jpg" alt="Justin Image 2">
+            <img src="justin3.jpg" alt="Justin Image 3">
+            <img src="justin4.jpg" alt="Justin Image 4">
+        </div>
+    </section>
+
+    <section id="memory-game">
+    <h2>Justin Bieber Memory Game</h2>
+    <div class="memory-game-container">
+        <div class="memory-card" data-framework="justin1">
+            <img class="front-face" src="justin1.jpg" alt="Justin Image 1">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin1">
+            <img class="front-face" src="justin1.jpg" alt="Justin Image 1">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin2">
+            <img class="front-face" src="justin2.jpg" alt="Justin Image 2">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin2">
+            <img class="front-face" src="justin2.jpg" alt="Justin Image 2">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin3">
+            <img class="front-face" src="justin3.jpg" alt="Justin Image 3">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin3">
+            <img class="front-face" src="justin3.jpg" alt="Justin Image 3">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin4">
+            <img class="front-face" src="justin4.jpg" alt="Justin Image 4">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin4">
+            <img class="front-face" src="justin4.jpg" alt="Justin Image 4">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin5">
+            <img class="front-face" src="justin5.jpg" alt="Justin Image 5">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+        <div class="memory-card" data-framework="justin5">
+            <img class="front-face" src="justin5.jpg" alt="Justin Image 5">
+            <img class="back-face" src="back.jpg" alt="Memory Card Back">
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Recommendation Section -->
+    <section id="recommendation">
+        <h2>Recommendation</h2>
+        <p>Leave a recommendation or note for Justin!</p>
+        <form action="submit_recommendation.php" method="POST">
+            <textarea name="recommendation" placeholder="Your message..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="recommendations">
+            <!-- PHP Code to Display Recommendations -->
+            <?php
+            $file = 'recommendations.txt';
+            if (file_exists($file)) {
+                $contents = file_get_contents($file);
+                echo nl2br($contents);
+            }
+            ?>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Justin Bieber Fanpage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
